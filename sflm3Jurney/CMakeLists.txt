@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(Pong)
+project(sfml3Jurney)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -14,7 +14,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(sfml)
 
-file(GLOB SOURCES *.cpp)
+file(GLOB SOURCES ${CMAKE_SOURCE_DIR}/firstStep/*.cpp)
 
 foreach(FILE ${SOURCES})
     get_filename_component(BINNAME ${FILE} NAME_WE)
