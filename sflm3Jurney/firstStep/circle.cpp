@@ -5,13 +5,20 @@
 #include <algorithm>
 
 
-
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode({800, 600}), "title");
+    sf::ContextSettings settings;
+    settings.antiAliasingLevel = 12;
+    sf::RenderWindow window(sf::VideoMode({800, 600}), "title", sf::State::Windowed, settings);
 
-    sf::CircleShape circle(50.f);
-    circle.setFillColor(sf::Color::Blue);
+    sf::CircleShape circle(200.f, 60);
+    circle.setFillColor(sf::Color(245, 123, 12));
+    circle.setOutlineColor(sf::Color(200, 100, 100));
+    circle.setOutlineThickness(30.f);
+    circle.setOrigin( {circle.getRadius(), circle.getRadius()} );
+    circle.setPosition( {window.getSize().x / 2.f, window.getSize().y / 2.f} );
+    // circle.setScale( {1.5f, -1.f} );
+    // circle.setRotation(sf::degrees(45.f));
 
     while (window.isOpen())
     {
